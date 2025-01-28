@@ -1,64 +1,28 @@
 public class Stars {
     public static void main(String[] args) {
-        lineOf13();
-        lineOf7();
-        lineOf35();
-        box10x3();
-        box5x4();
+        line('*',13);
+        line('.',7);
+        line('-',35);
+        box('*',10,3);
+        box('*',5,4);
     }
 
-    public static void lineOf13() {
-        for (int i = 1; i <= 13; i++) {
-            System.out.print("*");
-        }
-        System.out.println();
-    }
-
-    public static void lineOf7() {
-        for (int i = 1; i <= 7; i++) {
-            System.out.print("*");
+    public static void line(char c, int count) {
+        for (int i = 1; i <= count; i++) {
+            System.out.print(c);
         }
         System.out.println();
     }
 
-    public static void lineOf35() {
-        for (int i = 1; i <= 35; i++) {
-            System.out.print("*");
-        }
-        System.out.println();
-    }
-
-    private static void box10x3() {
-        for (int i = 1; i <= 10; i++) {
-            System.out.print("*");
-        }
-        System.out.println();
-        System.out.print("*");
-        for (int i = 1; i <= 8; i++) {
-            System.out.print(" ");
-        }
-        System.out.println("*");
-        for (int i = 1; i <= 10; i++) {
-            System.out.print("*");
-        }
-        System.out.println();
-    }
-
-    private static void box5x4() {
-        for (int i = 1; i <= 5; i++) {
-            System.out.print("*");
-        }
-        System.out.println();
-        for (int j = 1; j <= 2; j++) {
-            System.out.print("*");
-            for (int i = 1; i <= 3; i++) {
+    private static void box(char c, int width, int height) {
+        line(c, width);
+        for (int j = 1; j <= height-2; j++) {
+            System.out.print(c);
+            for (int i = 1; i <= width-2; i++) {
                 System.out.print(" ");
             }
-            System.out.println("*");
+            System.out.println(c);
         }
-        for (int i = 1; i <= 5; i++) {
-            System.out.print("*");
-        }
-        System.out.println();
+        line(c, width);
     }
 }
